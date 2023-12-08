@@ -1,5 +1,6 @@
 package com.example.test1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +32,7 @@ public class Login extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 
         binding = FragmentFirstBinding.inflate(inflater, container, false);
+
         return binding.getRoot();
 
     }
@@ -43,7 +45,10 @@ public class Login extends Fragment {
             public void onClick(View v) {
                 String email = binding.editTextEmail.getText().toString();
                 String password = binding.editTextPassword.getText().toString();
-                sendToServer(email, password);
+                //sendToServer(email, password);
+                Intent intent = new Intent(getContext(), Formulario.class);
+                //intent.putExtra("clave", "valor");
+                startActivity(intent);
             }
         });
 
